@@ -30,7 +30,7 @@ namespace AppiumTests
 			capabilities.SetCapability("noReset", true);
 			capabilities.SetCapability("launchTimeout", 120000); // 2min launch time out
 
-			capabilities.SetCapability("app", "/Users/macbuildserver/Development/001_TFS_build_agent/xcode_tfs_agent/_work/1/output/iphoneos/Debug/build.sym/Debug-iphoneos/EMS.ipa");
+			capabilities.SetCapability("app", "/Users/macbuildserver/Public/001_xcode_share/EMS_share/EMS.ipa");
 
 			// selenium grid url
 			Uri serverUri = new Uri("http://10.127.141.71:4433/wd/hub");
