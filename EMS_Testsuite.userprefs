@@ -1,27 +1,14 @@
 ﻿<Properties StartupItem="EMS_Testsuite/EMS_Testsuite.csproj">
-  <MonoDevelop.Ide.Workbench ActiveDocument="EMS_Testsuite/helpers/AppiumTestCapabilities.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="EMS_Testsuite/iOSLoginTest.cs">
     <Files>
-      <File FileName="EMS_Testsuite/helpers/AppiumTestCapabilities.cs" Line="48" Column="33" />
-      <File FileName="EMS_Testsuite/helpers/AppiumiOSTestServer.cs" Line="8" Column="2" />
+      <File FileName="EMS_Testsuite/iOSLoginTest.cs" Line="31" Column="80" />
     </Files>
     <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="EMS_Testsuite" expanded="True">
-            <Node name="EMS_Testsuite" expanded="True">
-              <Node name="helpers" expanded="True" />
-              <Node name="iOSLoginTest.cs" selected="True" />
-            </Node>
-          </Node>
-        </State>
-      </Pad>
       <Pad Id="MonoDevelop.UnitTesting.TestPad">
         <State name="__root__">
           <Node name="EMS_Testsuite" expanded="True" selected="True">
             <Node name="EMS_Testsuite" expanded="True">
-              <Node name="AppiumTests" expanded="True">
-                <Node name="iOSLoginTest" expanded="True" />
-              </Node>
+              <Node name="AppiumTests" expanded="True" />
             </Node>
           </Node>
         </State>
