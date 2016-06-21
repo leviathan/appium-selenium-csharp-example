@@ -90,16 +90,24 @@
             </summary>
             <param name="keyCode">Code for the long key pressed on the Android device</param>
         </member>
+        <member name="M:OpenQA.Selenium.Appium.Android.AndroidDriver`1.PressKeyCode(System.Int32,System.Int32)">
+            <summary>
+            Sends a device key event with metastate
+            </summary>
+            <param name="keyCode">Code for the long key pressed on the Android device</param>
+            <param name="metastate">metastate for the long key press</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Android.AndroidDriver`1.LongPressKeyCode(System.Int32,System.Int32)">
+            <summary>
+            Sends a device long key event with metastate
+            </summary>
+            <param name="keyCode">Code for the long key pressed on the Android device</param>
+            <param name="metastate">metastate for the long key press</param>
+        </member>
         <member name="M:OpenQA.Selenium.Appium.Android.AndroidDriver`1.ToggleLocationServices">
             <summary>
             Toggles Location Services.
             </summary>
-        </member>
-        <member name="M:OpenQA.Selenium.Appium.Android.AndroidDriver`1.IsLocked">
-            <summary>
-            Check if the device is locked
-            </summary>
-            <returns>true if device is locked, false otherwise</returns>
         </member>
         <member name="P:OpenQA.Selenium.Appium.Android.AndroidDriver`1.CurrentActivity">
             <summary>
@@ -179,6 +187,18 @@
             </summary>
             <param name="uiSelector">UiSelector-string to tell what to search for while scrolling</param>
             <returns>UiScrollable-string that can be executed with FindElementByAndroidUIAutomator()</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Android.AndroidDriver`1.Lock">
+            This method locks a device.
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Android.AndroidDriver`1.IsLocked">
+            <summary>
+            Check if the device is locked
+            </summary>
+            <returns>true if device is locked, false otherwise</returns>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Android.AndroidDriver`1.Unlock">
+            This method unlocks a device.
         </member>
         <member name="M:OpenQA.Selenium.Appium.Android.AndroidElement.#ctor(OpenQA.Selenium.Remote.RemoteWebDriver,System.String)">
             <summary>
@@ -2028,6 +2048,20 @@
             </summary>
             <param name="keyCode">Code for the long key pressed on the Android device</param>
         </member>
+        <member name="M:OpenQA.Selenium.Appium.Android.Interfaces.ISendsKeyEvents.PressKeyCode(System.Int32,System.Int32)">
+            <summary>
+            Sends a device key event with metastate
+            </summary>
+            <param name="keyCode">Code for the long key pressed on the Android device</param>
+            <param name="metastate">metastate for the long key press</param>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Android.Interfaces.ISendsKeyEvents.LongPressKeyCode(System.Int32,System.Int32)">
+            <summary>
+            Sends a device long key event with metastate
+            </summary>
+            <param name="keyCode">Code for the long key pressed on the Android device</param>
+            <param name="metastate">metastate for the long key press</param>
+        </member>
         <member name="P:OpenQA.Selenium.Appium.Android.Interfaces.IHasNetworkConnection.ConnectionType">
             <summary>
             Get/set the Connection Type
@@ -2076,6 +2110,322 @@
             </summary>
         </member>
         <!-- Проигнорирован некорректный комментарий XML для члена "M:OpenQA.Selenium.Appium.AppiumCommand.#ctor(System.String,System.String,System.String)" -->
+        <member name="T:OpenQA.Selenium.Appium.Enums.AndroidMobileCapabilityType">
+            <summary>
+            The list of Android-specific capabilities
+            Read: https://github.com/appium/appium/blob/1.5/docs/en/writing-running-appium/caps.md#android-only
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.AndroidMobileCapabilityType.AppActivity">
+            <summary>
+            Activity name for the Android activity you want to launch from your package. This often needs to be preceded
+            by a . (e.g., .MainActivity instead of MainActivity)
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.AndroidMobileCapabilityType.AppPackage">
+            <summary>
+            Java package of the Android app you want to run
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.AndroidMobileCapabilityType.AppWaitActivity">
+            <summary>
+            Activity name for the Android activity you want to wait for
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.AndroidMobileCapabilityType.AppWaitPackage">
+            <summary>
+            Java package of the Android app you want to wait for
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.AndroidMobileCapabilityType.DeviceReadyTimeout">
+            <summary>
+            Timeout in seconds while waiting for device to become ready
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.AndroidMobileCapabilityType.AndroidCoverage">
+            <summary>
+             Fully qualified instrumentation class. Passed to -w in adb shell am instrument -e coverage true -w
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.AndroidMobileCapabilityType.EnablePerformanceLogging">
+            <summary>
+            (Chrome and webview only) Enable Chromedriver's performance logging (default false)
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.AndroidMobileCapabilityType.AndroidDeviceReadyTimeout">
+            <summary>
+            Timeout in seconds used to wait for a device to become ready after booting
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.AndroidMobileCapabilityType.AdbPort">
+            <summary>
+            Port used to connect to the ADB server (default 5037)
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.AndroidMobileCapabilityType.AndroidDeviceSocket">
+            <summary>
+            Devtools socket name. Needed only when tested app is a Chromium embedding browser.
+            The socket is open by the browser and Chromedriver connects to it as a devtools client.
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.AndroidMobileCapabilityType.Avd">
+            <summary>
+            Name of avd to launch
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.AndroidMobileCapabilityType.AvdLaunchTimeout">
+            <summary>
+            How long to wait in milliseconds for an avd to launch and connect to ADB (default 120000)
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.AndroidMobileCapabilityType.AvdReadyTimeout">
+            <summary>
+            How long to wait in milliseconds for an avd to finish its boot animations (default 120000)
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.AndroidMobileCapabilityType.AvdArgs">
+            <summary>
+            Additional emulator arguments used when launching an avd
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.AndroidMobileCapabilityType.UseKeystore">
+            <summary>
+            Use a custom keystore to sign apks, default false
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.AndroidMobileCapabilityType.KeystorePath">
+            <summary>
+            Path to custom keystore, default ~/.android/debug.keystore
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.AndroidMobileCapabilityType.KeystorePassword">
+            <summary>
+            Password for custom keystore
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.AndroidMobileCapabilityType.KeyAlias">
+            <summary>
+            Alias for key
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.AndroidMobileCapabilityType.KeyPassword">
+            <summary>
+            Password for key
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.AndroidMobileCapabilityType.ChromedriverExecutable">
+            <summary>
+            The absolute local path to webdriver executable (if Chromium embedder provides its own webdriver,
+            it should be used instead of original chromedriver bundled with Appium)
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.AndroidMobileCapabilityType.AutoWebviewTimeout">
+            <summary>
+            Amount of time to wait for Webview context to become active, in ms. Defaults to 2000
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.AndroidMobileCapabilityType.IntentAction">
+            <summary>
+            Intent action which will be used to start activity (default android.intent.action.MAIN)
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.AndroidMobileCapabilityType.IntentCategory">
+            <summary>
+            Intent category which will be used to start activity (default android.intent.category.LAUNCHER)
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.AndroidMobileCapabilityType.IntentFlags">
+            <summary>
+            Flags that will be used to start activity (default 0x10200000)
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.AndroidMobileCapabilityType.OptionalIntentArguments">
+            <summary>
+            Additional intent arguments that will be used to start activity. See Intent arguments:
+            http://developer.android.com/tools/help/adb.html#IntentSpec
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.AndroidMobileCapabilityType.DontStopAppOnReset">
+            <summary>
+            Doesn't stop the process of the app under test, before starting the app using adb.
+            If the app under test is created by another anchor app, setting this false,
+            allows the process of the anchor app to be still alive, during the start of the test app using adb.
+            In other words, with dontStopAppOnReset set to true, we will not include the -S flag in the adb shell am start call.
+            With this capability omitted or set to false, we include the -S flag. Default false
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.AndroidMobileCapabilityType.UnicodeKeyboard">
+            <summary>
+            Enable Unicode input, default false
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.AndroidMobileCapabilityType.ResetKeyboard">
+            <summary>
+            Reset keyboard to its original state, after running Unicode tests with unicodeKeyboard capability.
+            Ignored if used alone. Default false
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.AndroidMobileCapabilityType.NoSign">
+            <summary>
+            Skip checking and signing of app with debug keys, will work only with
+            UiAutomator and not with selendroid, default false
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.AndroidMobileCapabilityType.IgnoreUnimportantViews">
+            <summary>
+            Calls the setCompressedLayoutHierarchy() uiautomator function. This capability can speed up test execution,
+            since Accessibility commands will run faster ignoring some elements. The ignored elements will not be findable,
+            which is why this capability has also been implemented as a toggle-able setting as well as a capability.
+            Defaults to false
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.AndroidMobileCapabilityType.DisableAndroidWatchers">
+            <summary>
+            Disables android watchers that watch for application not responding and application crash,
+            this will reduce cpu usage on android device/emulator. This capability will work only with
+            UiAutomator and not with selendroid, default false
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.AndroidMobileCapabilityType.ChromeOptions">
+            <summary>
+            Allows passing chromeOptions capability for ChromeDriver. For more information see chromeOptions:
+            https://sites.google.com/a/chromium.org/chromedriver/capabilities
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.AndroidMobileCapabilityType.RECREATE_CHROME_DRIVER_SESSIONS">
+            Kill ChromeDriver session when moving to a non-ChromeDriver webview. Defaults to false
+        </member>
+        <member name="T:OpenQA.Selenium.Appium.Enums.IOSMobileCapabilityType">
+            <summary>
+            The list of iOS-specific capabilities
+            Read: https://github.com/appium/appium/blob/1.5/docs/en/writing-running-appium/caps.md#ios-only
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.IOSMobileCapabilityType.CalendarFormat">
+            <summary>
+            (Sim-only) Calendar format to set for the iOS Simulator
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.IOSMobileCapabilityType.BundleId">
+            <summary>
+            Bundle ID of the app under test. Useful for starting an app on a real device or for using other caps which require
+            the bundle ID during test startup. To run a test on a real device using the bundle ID,
+            you may omit the 'app' capability, but you must provide 'udid'.
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.IOSMobileCapabilityType.LaunchTimeout">
+            <summary>
+            Amount of time in ms to wait for instruments before assuming it hung and failing the session
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.IOSMobileCapabilityType.LocationServicesEnabled">
+            <summary>
+            (Sim-only) Force location services to be either on or off. Default is to keep current sim setting.
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.IOSMobileCapabilityType.LocationServicesAuthorized">
+            <summary>
+            (Sim-only) Set location services to be authorized or not authorized for app via plist, so that location services
+            alert doesn't pop up. Default is to keep current sim setting. Note that
+            if you use this setting you MUST also use the bundleId capability to send in your app's bundle ID.
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.IOSMobileCapabilityType.AutoAcceptAlerts">
+            <summary>
+            Accept all iOS alerts automatically if they pop up. This includes privacy access permission alerts
+            (e.g., location, contacts, photos). Default is false.
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.IOSMobileCapabilityType.AutoDismissAlerts">
+            <summary>
+            Dismiss all iOS alerts automatically if they pop up.
+            This includes privacy access permission alerts (e.g.,
+            location, contacts, photos). Default is false.
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.IOSMobileCapabilityType.NativeInstrumentsLib">
+            <summary>
+            Use native intruments lib (ie disable instruments-without-delay).
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.IOSMobileCapabilityType.NativeWebTap">
+            <summary>
+            (Sim-only) Enable "real", non-javascript-based web taps in Safari.
+            Default: false.
+            Warning: depending on viewport size/ratio this might not accurately tap an element
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.IOSMobileCapabilityType.SafariInitialUrl">
+            <summary>
+            (Sim-only) (>= 8.1) Initial safari url, default is a local welcome page
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.IOSMobileCapabilityType.SafariAllowPopups">
+            <summary>
+            (Sim-only) Allow javascript to open new windows in Safari. Default keeps current sim setting
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.IOSMobileCapabilityType.SafariIgnoreFraudWarning">
+            <summary>
+            (Sim-only) Prevent Safari from showing a fraudulent website warning. Default keeps current sim setting.
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.IOSMobileCapabilityType.SafariOpenLinksInBackground">
+            <summary>
+            (Sim-only) Whether Safari should allow links to open in new windows. Default keeps current sim setting.
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.IOSMobileCapabilityType.KeepKeyChains">
+            <summary>
+            (Sim-only) Whether to keep keychains (Library/Keychains) when appium session is started/finished
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.IOSMobileCapabilityType.LOCALIZABLE_STRINGS_DIR">
+            <summary>
+            Where to look for localizable strings. Default en.lproj
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.IOSMobileCapabilityType.ProcessArguments">
+            <summary>
+            Arguments to pass to the AUT using instruments
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.IOSMobileCapabilityType.InterKeyDelay">
+            <summary>
+            The delay, in ms, between keystrokes sent to an element when typing.
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.IOSMobileCapabilityType.ShowIOSLog">
+            <summary>
+            Whether to show any logs captured from a device in the appium logs. Default false
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.IOSMobileCapabilityType.SendKeyStrategy">
+            <summary>
+            strategy to use to type test into a test field. Simulator default: oneByOne. Real device default: grouped
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.IOSMobileCapabilityType.ScreenshotWaitTimeout">
+            <summary>
+            Max timeout in sec to wait for a screenshot to be generated. default: 10
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.IOSMobileCapabilityType.WaitForAppScript">
+            <summary>
+            The ios automation script used to determined if the app has been launched,
+            by default the system wait for the page source not to be empty. The result must be a boolean
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.IOSMobileCapabilityType.WebviewConnectRetries">
+            <summary>
+            Number of times to send connection message to remote debugger, to get webview. Default: 8
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.IOSMobileCapabilityType.AppName">
+            <summary>
+            The display name of the application under test. Used to automate backgrounding the app in iOS 9+.
+            </summary>
+        </member>
         <member name="F:OpenQA.Selenium.Appium.Enums.MobileBrowserType.Browser">
             <summary>
             It is native Android browser.
@@ -2116,6 +2466,11 @@
             Time out for the waiting for the app is launched.
             </summary>
         </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.MobileCapabilityType.BrowserName">
+            <summary>
+            Name of mobile web browser to automate. Should be an empty string if automating an app instead.
+            </summary>
+        </member>
         <member name="F:OpenQA.Selenium.Appium.Enums.MobileCapabilityType.AutomationName">
             <summary>
             Capability name used for the automation name (e.g. Appium, Selendroid and so on) setting.
@@ -2136,10 +2491,49 @@
             It is the required activity name.
             </summary>
         </member>
-        <!-- Проигнорирован некорректный комментарий XML для члена "F:OpenQA.Selenium.Appium.Enums.MobileCapabilityType.AppWaitActivity" -->
-        <!-- Проигнорирован некорректный комментарий XML для члена "F:OpenQA.Selenium.Appium.Enums.MobileCapabilityType.AppWaitPackage" -->
+        <member name="F:OpenQA.Selenium.Appium.Enums.MobileCapabilityType.AppWaitActivity">
+            <summary>
+            It is the name of the activity which is expected.
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.MobileCapabilityType.AppWaitPackage">
+            <summary>
+            It is the name of the package which is expected.
+            </summary>
+        </member>
+        <!-- Проигнорирован некорректный комментарий XML для члена "F:OpenQA.Selenium.Appium.Enums.MobileCapabilityType.Udid" -->
+        <member name="F:OpenQA.Selenium.Appium.Enums.MobileCapabilityType.Language">
+            <summary>
+            (Sim/Emu-only) Language to set for the simulator / emulator
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.MobileCapabilityType.Locale">
+            <summary>
+            (Sim/Emu-only) Locale to set for the simulator / emulator
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.MobileCapabilityType.Orientation">
+            <summary>
+            (Sim/Emu-only) start in a certain orientation
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.MobileCapabilityType.AutoWebview">
+            <summary>
+             Move directly into Webview context. Default false
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.MobileCapabilityType.NoReset">
+            <summary>
+            Don't reset app state before this session. Default false
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Enums.MobileCapabilityType.FullReset">
+            <summary>
+            (iOS) Delete the entire simulator folder. (Android) Reset app state by uninstalling app instead of clearing app data.
+            On Android, this will also remove the app after the session is complete. Default false
+            </summary>
+        </member>
         <!-- Проигнорирован некорректный комментарий XML для члена "F:OpenQA.Selenium.Appium.Enums.MobileCapabilityType.SelendroidPort" -->
-        <!-- Проигнорирован некорректный комментарий XML для члена "F:OpenQA.Selenium.Appium.Enums.MobileCapabilityType.AutoWebview" -->
         <member name="T:OpenQA.Selenium.Appium.Interfaces.IContextAware">
             <summary>
             Some implementations of WebDriver, notably those that support native testing, need the ability
@@ -2541,6 +2935,12 @@
             <param name="elementId">element to create</param>
             <returns>IOSElement</returns>
         </member>
+        <member name="M:OpenQA.Selenium.Appium.iOS.IOSDriver`1.Lock(System.Int32)">
+            <summary>
+            Locks the device.
+            </summary>
+            <param name="seconds">The number of seconds during which the device need to be locked for.</param>
+        </member>
         <member name="M:OpenQA.Selenium.Appium.iOS.IOSElement.#ctor(OpenQA.Selenium.Remote.RemoteWebDriver,System.String)">
             <summary>
             Initializes a new instance of the IOSElement class.
@@ -2653,11 +3053,6 @@
             Sets the target element tag name
             </summary>
         </member>
-        <member name="P:OpenQA.Selenium.Appium.PageObjects.Attributes.Abstract.FindsByMobileAttribute.Name">
-            <summary>
-            Sets the target element name
-            </summary>
-        </member>
         <member name="P:OpenQA.Selenium.Appium.PageObjects.Attributes.Abstract.FindsByMobileAttribute.XPath">
             <summary>
             Sets the target element xpath
@@ -2666,6 +3061,11 @@
         <member name="P:OpenQA.Selenium.Appium.PageObjects.Attributes.Abstract.FindsByUIAutomatorsAttribute.Accessibility">
             <summary>
             Sets the target accessibility
+            </summary>
+        </member>
+        <member name="P:OpenQA.Selenium.Appium.PageObjects.Attributes.Abstract.FindsByUIAutomatorsAttribute.Name">
+            <summary>
+            Sets the target element name
             </summary>
         </member>
         <member name="P:OpenQA.Selenium.Appium.PageObjects.Attributes.FindsBySelendroidAttribute.LinkText">
@@ -2678,6 +3078,11 @@
             <summary>
             Sets the target element partial link text
             This locator is supported by Selendroid
+            </summary>
+        </member>
+        <member name="P:OpenQA.Selenium.Appium.PageObjects.Attributes.FindsBySelendroidAttribute.Name">
+            <summary>
+            Sets the target element name
             </summary>
         </member>
         <member name="P:OpenQA.Selenium.Appium.PageObjects.Attributes.FindsByAndroidUIAutomatorAttribute.AndroidUIAutomator">
@@ -2810,6 +3215,20 @@
         <member name="P:OpenQA.Selenium.Appium.Service.AppiumLocalService.IsRunning">
             <summary>
             Is the defined appium server being run or not
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Service.AppiumServiceConstants.AppiumBinaryPath">
+            <summary>
+            The environmental variable used to define
+            the path to executable appium.js (1.4.x and lower) or
+            main.js (1.5.x and higher)
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.Service.AppiumServiceConstants.NodeBinaryPath">
+            <summary>
+            The environmental variable used to define
+            the path to executable NodeJS file (node.exe for WIN and
+            node for Linux/MacOS X)
             </summary>
         </member>
         <member name="T:OpenQA.Selenium.Appium.Service.AppiumServiceBuilder">
@@ -3037,6 +3456,18 @@
             <summary>
              If set, prevents Appium from killing the adb server
              instance<br/>
+            </summary>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Service.Options.AndroidOptionList.ChromeDriverPort(System.String)">
+            <summary>
+             Port upon which ChromeDriver will run<br/>
+             Sample:<br/>
+             --chromedriver-port 9515
+            </summary>
+        </member>
+        <member name="M:OpenQA.Selenium.Appium.Service.Options.AndroidOptionList.ChromeDriverExecutable(System.String)">
+            <summary>
+             ChromeDriver executable full path
             </summary>
         </member>
         <member name="T:OpenQA.Selenium.Appium.Service.Options.IOSOptionList">
@@ -3372,6 +3803,13 @@
             is string value of the passed argument</param>
             <returns>self reference</returns>
         </member>
+        <member name="M:OpenQA.Selenium.Appium.Service.Options.OptionCollector.AddCapabilities(OpenQA.Selenium.Remote.DesiredCapabilities)">
+            <summary>
+            Adds/merges server-specific capabilities
+            </summary>
+            <param name="capabilities">is an instance of OpenQA.Selenium.Remote.DesiredCapabilities</param>
+            <returns>the self-reference</returns>        
+        </member>
         <member name="P:OpenQA.Selenium.Appium.Service.Options.OptionCollector.Argiments">
             <summary>
             Builds a sequence of server arguments
@@ -3647,6 +4085,15 @@
             Gets the App Strings.
             </summary>
         </member>
+        <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.GetAppStringDictionary(System.String,System.String)">
+            <summary>
+            Get all defined Strings from an app for the specified language and
+            strings filename
+            </summary>
+            <returns>a dictionary with localized strings defined in the app.</returns>
+            <param name="language">strings language code</param>
+            <param name="stringFile">strings filename</param>
+        </member>
         <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.HideKeyboard(System.String,System.String)">
             <summary>
             Hide the keyboard
@@ -3801,6 +4248,12 @@
             <param name="el">The element to pinch</param>
             </summary>
         </member>
+        <member name="P:OpenQA.Selenium.Appium.AppiumDriver`1.DeviceTime">
+            <summary>
+            Gets device date and time for both iOS(Supports only real device) and Android devices
+            </summary>
+            <returns>A string which consists of date and time</returns>
+        </member>
         <member name="M:OpenQA.Selenium.Appium.AppiumDriver`1.InternalExecute(System.String,System.Collections.Generic.Dictionary{System.String,System.Object})">
             <summary>
             Executes commands with the driver 
@@ -3838,6 +4291,11 @@
             Represents the Lock Device Mapping command
             </summary>
         </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.UnlockDevice">
+            <summary>
+            Represents the Unlock Device Mapping command
+            </summary>
+        </member>
         <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.IsLocked">
             <summary>
             Represents the Is Device Locked Mapping command
@@ -3856,6 +4314,16 @@
         <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.KeyEvent">
             <summary>
             Press Key Event Command.
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.PressKeyCode">
+            <summary>
+            Press key code 
+            </summary>
+        </member>
+        <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.LongPressKeyCode">
+            <summary>
+            Long press key code
             </summary>
         </member>
         <member name="F:OpenQA.Selenium.Appium.AppiumDriverCommand.Rotate">
