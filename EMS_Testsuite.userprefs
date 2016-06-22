@@ -1,14 +1,16 @@
 ﻿<Properties StartupItem="EMS_Testsuite/EMS_Testsuite.csproj">
   <MonoDevelop.Ide.Workbench ActiveDocument="EMS_Testsuite/iOSLoginTest.cs">
     <Files>
-      <File FileName="EMS_Testsuite/iOSLoginTest.cs" Line="31" Column="80" />
+      <File FileName="EMS_Testsuite/iOSLoginTest.cs" Line="33" Column="100" />
     </Files>
     <Pads>
       <Pad Id="MonoDevelop.UnitTesting.TestPad">
         <State name="__root__">
           <Node name="EMS_Testsuite" expanded="True" selected="True">
             <Node name="EMS_Testsuite" expanded="True">
-              <Node name="AppiumTests" expanded="True" />
+              <Node name="AppiumTests" expanded="True">
+                <Node name="iOSLoginTest" expanded="True" />
+              </Node>
             </Node>
           </Node>
         </State>
