@@ -50,6 +50,16 @@ namespace AppiumTests
 			// Amount of time in ms to wait for instruments before assuming it hung and failing the session
 			capabilities.SetCapability("launchTimeout", 120000); // 2min launch time out
 
+			// Launch Arguments to pass to the iOS simulator (via instruments), e.g. "-ActiveConfiguration XYValue"
+			//
+			// Supported Values:
+			// 		- Development
+			// 		- Test
+			// 		- Production
+			// 		- Sandpit
+			//
+			capabilities.SetCapability("processArguments", "-ActiveConfiguration Development");
+
 			// ------------------------------------------------------------------------------------------------------------
 
 			// Dynamic environment identifier, which is used by the Xcode build agent 
